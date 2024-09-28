@@ -1,54 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Screen Botpress WebChat</title>
-    <style>
-        /* Ensures full-screen layout */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
 
-        #botpress-webchat-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 9999;
-        }
-    </style>
-</head>
 <body>
+// Import the Botpress WebChat JavaScript file
+<script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
 
-    <!-- This div will contain the WebChat -->
-    <div id="botpress-webchat-container"></div>
+// Initialize the Botpress WebChat with the required parameters
+<script>
+    window.botpressWebChat.init({
+        // Replace <your-bot-id> and <your-client-id> with your actual bot and client IDs
+        "botId": "7b65f5c9-db47-4f97-95e1-56516172f58a",
+        "clientId": "3cad505b-394b-4e7e-81d0-8baf1ff45cee",
 
-    <!-- Import the Botpress WebChat JavaScript file -->
-    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+        // Set the URL for the Botpress WebChat JavaScript file and the messaging server
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
+        "messagingUrl": "https://messaging.botpress.cloud",
 
-    <!-- Initialize the Botpress WebChat with the required parameters -->
-    <script>
-        window.botpressWebChat.init({
-            botId: "7b65f5c9-db47-4f97-95e1-56516172f58a",  // Your actual bot ID
-            clientId: "3cad505b-394b-4e7e-81d0-8baf1ff45cee", // Your actual client ID
-            hostUrl: "https://cdn.botpress.cloud/webchat/v0",
-            messagingUrl: "https://messaging.botpress.cloud",
-            botName: "Test", // The name of the bot shown in the interface
-            hideWidget: true,
-            disableAnimations: true,
-            // Specifying the container to render the chat in full-screen
-            container: '#botpress-webchat-container'
-        });
+        // Set the name of the bot that will be displayed in the WebChat interface
+        "botName": "Test",
 
-        // Automatically open the Chatbot when the WebChat is loaded
-        window.botpressWebChat.onEvent(function () {
+        // Set the width of the WebChat container and layout to 100% (Full Screen)
+        "containerWidth": "100%25",
+        "layoutWidth": "100%25",
+
+        // Hide the widget and disable animations
+        "hideWidget": true,
+        "disableAnimations": true,
+    });
+
+    // Opens up the Chatbot by default
+    // This lets users start chatting with the Chatbot without needing to click any buttons or menus.
+    window.botpressWebChat.onEvent(
+        function () {
             window.botpressWebChat.sendEvent({ type: "show" });
-        }, ["LIFECYCLE.LOADED"]);
-    </script>
+        },
+        ["LIFECYCLE.LOADED"]
+    );
+</script>
 </body>
 </html>
