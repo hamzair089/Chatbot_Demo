@@ -1,93 +1,177 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Botpress in a div</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
 
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        color: white;
-        background-color: #000000;
-        font-family: Arial, sans-serif;
-      }
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
+    <title>Chatbot-Demo</title>
+    <!-- ========== All CSS files linkup ========= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="assets/css/simple-bar.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-      .center-div {
-        width: 50vw;
-        height: 80vh;
-        background-color: rgb(102, 71, 255);
-        border-radius: 15px;
-        padding: 5px;
-        box-sizing: border-box;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
+<body class="position-relative" data-bs-spy="scroll" data-bs-target="#navbar-example2" tabindex="0">
 
-      @media only screen and (max-width: 600px) {
-        .center-div {
-          height: 40vh;
-          width: 80vw;
-          background-color: rgb(102, 71, 255);
-          border-radius: 15px;
-          padding: 5px;
-          box-sizing: border-box;
-          color: white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div>
-      <p style="text-align: center;">Botpress Chatbot in a <span><</span><span>div></span></p>
-      <div class="absolute inset-4 ">
-        <div
-          class="center-div relative h-full w-full overflow-clip rounded-md border border-zinc-200 bg-white p-2 px-0 py-0"
-        >
-          <iframe
-            style="border: none;"
-            srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
-            <script>
-              window.botpressWebChat.init({
-                  'composerPlaceholder': 'Chat with bot',
-                  'botConversationDescription': 'This chatbot was built surprisingly fast with Botpress',
-                  'botName': 'Name',
-                  'botId': '7b65f5c9-db47-4f97-95e1-56516172f58a',
-                  'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
-                  'messagingUrl': 'https://messaging.botpress.cloud',
-                  'clientId': '3cad505b-394b-4e7e-81d0-8baf1ff45cee',
-                  'enableConversationDeletion': true,
-                  'showPoweredBy': true,
-                  'className': 'webchatIframe',
-                  'containerWidth': '100%25',
-                  'layoutWidth': '100%25',
-                  'hideWidget': true,
-                  'showCloseButton': false,
-                  'disableAnimations': true,
-                  'closeOnEscape': false,
-                  'showConversationsButton': false,
-                  'enableTranscriptDownload': false,
-                  'stylesheet':'https://webchat-styler-css.botpress.app/prod/code/3fcd3e4e-d5bc-4bf5-8699-14b621b3ada2/v31782/style.css'
-                  
-              });
-            window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
-            </script></body>"
-            width="100%"
-            height="100%"
-          ></iframe>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </div>
     </div>
-  </body>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area others-pages">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo/logo.svg" alt="Logo">
+              </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+              </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="documentation.html" class="active" aria-label="Toggle navigation">Project Demonstration for Clients</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- navbar collapse -->
+                            <div class="button">
+                                <a href="https://botixai.com" class="btn">Contact Us <i ></i></a>
+                            </div>
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </header>
+    <!-- End Header Area -->
+
+    <main>
+        <button class="menu-button menu-open">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+        <div class="doc_overlay"></div>
+        <div class="container doc_container">
+            <div class="row">
+               
+                <div class="col-xl-9 col-lg-9 col-12">
+                    <section class="main-section" data-bs-target="#navbar-example3" tabindex="0">
+                        <div class="doc-main-wrapper">
+
+                            <!-- Start Installation -->
+                            <div id="installation" class="welcome mb-30">
+                                <h1 class="mb-30">
+                                    Welcome To <span class="template-name">ChatBot Demonstration.</span>
+                                </h1>
+
+                                <p>
+                                    "Firstly, a huge thanks for considering our services, your support is truly appreciated!
+                                </p>
+
+                                <p class="mb-30">
+                                    We are excited to present a demonstration of our chatbot integration, designed to enhance user engagement and streamline your operations. Our chatbot offers a seamless and intuitive user experience, ensuring efficient interaction and support for your customers. Please review the demo below and share your feedback with us. We are eager to discuss any adjustments or additional features you may need. Your satisfaction is our priority, and we look forward to collaborating with you on this project.</p>
+                                <p class="mb-30">
+                                    I have taken several business automation projects but find out the rest on my
+                                    <a href="https://botixai.com" class="ticket" target="_blank"> Website</a>
+                                </p>
+                                <div class="author-info">
+                                    <img src="assets/images/author/avatar-image.png" alt="#">
+                                    <div>
+                                        <p class="name">Written by Hamza Irfan</p>
+                                        <span>Bot Developer</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Installation -->
+
+                            
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- ========================= scroll-top ========================= -->
+
+    <!-- ========= All Javascript files linkup ======== -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/simple-bar.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        const menuButtonOpen = document.querySelector(".menu-open");
+        const menuButtonClose = document.querySelector(".menu-close");
+        const sidebar = document.querySelector(".doc-sidebar");
+        const docOverlay = document.querySelector(".doc_overlay");
+
+        menuButtonOpen.addEventListener("click", () => {
+            sidebar.classList.add("show");
+            docOverlay.classList.add('open');
+        });
+        menuButtonClose.addEventListener("click", () => {
+            sidebar.classList.remove("show");
+            docOverlay.classList.remove('open');
+        });
+        docOverlay.addEventListener("click", () => {
+            sidebar.classList.remove("show");
+            docOverlay.classList.remove('open');
+        });
+
+
+        // ===== copy code 
+        const copyButton = document.querySelectorAll('.copy-btn');
+        copyButton.forEach(element => {
+            element.addEventListener('click', (e) => {
+                const elem = e.target.parentElement.children[1].innerText;
+                const el = document.createElement('textarea');
+
+                console.log(elem)
+                el.value = elem;
+
+                document.body.appendChild(el);
+
+                el.select();
+                document.execCommand("copy");
+                alert(`Code Copied!`)
+                document.body.removeChild(el)
+            })
+        });
+    </script>
+
+
+
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2024/10/02/19/20241002194452-Q0JH1YPU.js"></script>
+    
+
+    </body>
+</html>
+
+
+</body>
+
 </html>
